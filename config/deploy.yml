@@ -17,6 +17,10 @@ servers:
     hosts:
       - <%= ENV["SOCIAL_BANKERS_SERVER_IP"] %>
 
+# Ubuntu AMIs log in as `ubuntu`, not root.
+ssh:
+  user: ubuntu
+
 proxy:
   ssl: true
   host: socialbankers.org
