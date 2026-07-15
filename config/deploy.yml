@@ -1,0 +1,38 @@
+# Kamal 2 deploy config — socialbankers.org (static marketing site).
+# Deploys onto the SAME EC2 host as the portal; the shared kamal-proxy routes
+# by hostname (socialbankers.org here, members.socialbankers.org for the portal).
+#
+# Usage:
+#   export SOCIAL_BANKERS_SERVER_IP=1.2.3.4
+#   kamal setup     # first deploy (attaches to the existing kamal-proxy)
+#   kamal deploy    # subsequent deploys
+#
+# Secrets: copy .kamal/secrets.example → .kamal/secrets (gitignored) and fill in.
+
+service: social-bankers-www
+image: social-bankers/www  # change to your Docker Hub org or ECR URI
+
+servers:
+  web:
+    hosts:
+      - <%= ENV["SOCIAL_BANKERS_SERVER_IP"] %>
+
+proxy:
+  ssl: true
+  host: socialbankers.org
+  app_port: 80
+  healthcheck:
+    path: /up
+    interval: 10
+    timeout: 5
+
+registry:
+  username:
+    - KAMAL_REGISTRY_USERNAME
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+
+builder:
+  arch: amd64   # match the EC2 host
+
+# Pure static site — no env, secrets, or accessories needed.

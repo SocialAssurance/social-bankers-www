@@ -1,0 +1,7 @@
+.git
+.kamal/secrets
+config
+DEPLOY.md
+README.md
+deploy.sh
+.DS_Store

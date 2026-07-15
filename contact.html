@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Social Bankers</title>
+  <meta name="description" content="Questions about Social Bankers or the community? Send us a note and a member of our team will be in touch soon." />
+  <link rel="icon" type="image/svg+xml" href="assets/logo/badge/social-bankers-badge-circle.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="Social Bankers home">
+        <img src="assets/logo/lockup/social-bankers-horizontal-navy.svg" alt="Social Bankers" />
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav">
+        <a href="about.html">About Us</a>
+        <a href="membership.html">Membership</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a class="nav-login" href="https://members.socialbankers.org">Member Login</a>
+        <a class="btn btn-primary" href="https://members.socialbankers.org/application">Apply for Membership</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero page-hero">
+    <div class="container">
+      <span class="eyebrow">Contact</span>
+      <h1>We'd Love to Hear From You</h1>
+      <p>Have a question about the community or how membership works? Send us a note and we'll get back to you.</p>
+    </div>
+  </section>
+
+  <section class="section bg-soft" id="ask">
+    <div class="container">
+      <div class="split">
+        <div class="prose">
+          <span class="eyebrow">Questions</span>
+          <h2>Ask us anything about the community.</h2>
+          <p>Every message reaches our team at <a href="mailto:info@socialassurance.com">info@socialassurance.com</a>, and a real person will follow up.</p>
+
+          <div class="card" style="margin-top:32px;">
+            <h3>Ready to Join?</h3>
+            <p>No need to contact us first — applications go straight to our team.</p>
+            <p style="margin-top:16px;">
+              <a class="btn btn-outline" href="https://members.socialbankers.org/application">Apply for Membership</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <!--
+            STATIC FORM SETUP — no backend, no CMS.
+            ---------------------------------------
+            Point `action` at a hosted form endpoint configured to deliver to
+            info@socialassurance.com. Formspree, Basin, Getform, and Netlify Forms
+            all work; create the form there, set its recipient to
+            info@socialassurance.com, then paste the endpoint URL below.
+
+            Until an endpoint is set, submitting opens the visitor's email client
+            addressed to info@socialassurance.com so no question is ever lost.
+          -->
+          <form id="question-form" action="https://formspree.io/f/REPLACE_WITH_FORM_ID" method="POST">
+            <input type="hidden" name="_subject" value="Social Bankers — Website Question" />
+            <div class="field-row">
+              <div class="field">
+                <label for="firstName">First name</label>
+                <input type="text" id="firstName" name="first_name" required />
+              </div>
+              <div class="field">
+                <label for="lastName">Last name</label>
+                <input type="text" id="lastName" name="last_name" required />
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+              <div class="field">
+                <label for="institution">Institution / Bank <span style="color:var(--muted); font-weight:400;">(optional)</span></label>
+                <input type="text" id="institution" name="institution" />
+              </div>
+            </div>
+            <div class="field">
+              <label for="reason">I'm reaching out about</label>
+              <select id="reason" name="reason">
+                <option value="A question about the community">A question about the community</option>
+                <option value="A question about membership">A question about membership</option>
+                <option value="Partnership or sponsorship">Partnership or sponsorship</option>
+                <option value="Ideas or feedback">Ideas or feedback</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="message">How can we help?</label>
+              <textarea id="message" name="message" placeholder="Tell us what's on your mind." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%;">Send Question</button>
+            <p class="form-note">Your question goes to info@socialassurance.com. We never share your information.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <img class="foot-logo" src="assets/logo/lockup/social-bankers-stacked-white.svg" alt="Social Bankers" />
+          <p>A private professional community for community banking professionals to connect, learn, and grow together.</p>
+        </div>
+        <nav class="footer-nav">
+          <a href="about.html">About Us</a>
+          <a href="membership.html">Membership</a>
+          <a href="contact.html">Contact</a>
+          <a href="https://members.socialbankers.org">Member Login</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Social Bankers. All rights reserved.</span>
+        <span><a href="mailto:info@socialassurance.com" style="color:inherit;">info@socialassurance.com</a> &nbsp;·&nbsp; socialbankers.org</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/nav.js"></script>
+  <script>
+    // Fallback: until a hosted form endpoint is configured, hand the question off to the
+    // visitor's email client addressed to info@socialassurance.com. Harmless to leave in —
+    // it disables itself as soon as `action` points at a real endpoint.
+    (function () {
+      var form = document.getElementById('question-form');
+      if (!form) return;
+      form.addEventListener('submit', function (e) {
+        if (form.action.indexOf('REPLACE_WITH_FORM_ID') === -1) return; // real endpoint configured
+        e.preventDefault();
+        var get = function (n) { var el = form.elements[n]; return el ? el.value : ''; };
+        var subject = encodeURIComponent('Social Bankers Question — ' + get('reason'));
+        var body = encodeURIComponent(
+          'Name: ' + get('first_name') + ' ' + get('last_name') + '\n' +
+          'Email: ' + get('email') + '\n' +
+          'Institution: ' + get('institution') + '\n' +
+          'Topic: ' + get('reason') + '\n\n' +
+          get('message')
+        );
+        window.location.href = 'mailto:info@socialassurance.com?subject=' + subject + '&body=' + body;
+      });
+    })();
+  </script>
+</body>
+</html>
